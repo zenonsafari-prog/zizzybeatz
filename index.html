@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ZizzyBeatz – Premium HipHop Beats</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- ───────────── NAVBAR ───────────── -->
+  <nav class="navbar">
+    <div class="nav-logo">ZIZZY<span>BEATZ</span></div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#beats">Beats</a></li>
+      <li><a href="#lizenzen">Lizenzen</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <div class="nav-cart">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="cart-count">0</span>
+    </div>
+    <div class="burger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ───────────── HERO ───────────── -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-sub">🔥 Premium HipHop Beats</p>
+      <h1>ZIZZY<span>BEATZ</span></h1>
+      <p class="hero-desc">Professionelle Beats für deinen nächsten Hit.<br/>Trap · Drill · RnB Trap · Boom Bap</p>
+      <div class="hero-btns">
+        <a href="#beats" class="btn-primary">Beats entdecken</a>
+        <a href="#lizenzen" class="btn-outline">Lizenzen ansehen</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- ───────────── STATS ───────────── -->
+  <section class="stats">
+    <div class="stat-item">
+      <h2>3+</h2>
+      <p>Beats verfügbar</p>
+    </div>
+    <div class="stat-item">
+      <h2>5+</h2>
+      <p>Jahre Erfahrung</p>
+    </div>
+    <div class="stat-item">
+      <h2>3+</h2>
+      <p>Jahre Mixing & Mastering</p>
+    </div>
+    <div class="stat-item">
+      <h2>1</h2>
+      <p>Beat bei RaplaRue</p>
+    </div>
+  </section>
+
+  <!-- ───────────── BEATS SECTION ───────────── -->
+  <section class="beats-section" id="beats">
+    <div class="section-header">
+      <p class="section-label">🎧 Meine Beats</p>
+      <h2>Aktuelle <span>Releases</span></h2>
+      <p class="section-sub">Wähle deinen Beat, hör rein und sichere dir deine Lizenz</p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterBeats('all', this)">Alle</button>
+      <button class="filter-btn" onclick="filterBeats('trap', this)">Trap</button>
+      <button class="filter-btn" onclick="filterBeats('drill', this)">Drill-Trap</button>
+      <button class="filter-btn" onclick="filterBeats('rnb', this)">RnB Trap</button>
+      <button class="filter-btn" onclick="filterBeats('boombap', this)">Boom Bap</button>
+    </div>
+
+    <!-- Beat Cards Grid -->
+    <div class="beats-grid" id="beatsGrid">
+
+      <!-- BEAT CARD 1 -->
+      <div class="beat-card" data-genre="boombap">
+        <div class="beat-cover">
+          <div class="beat-cover-placeholder">🎵</div>
+          <div class="beat-overlay">
+            <button class="play-btn" onclick="playBeat(this, 'beats/Jazz Boom Bap live drums.mp3')">
+              <i class="fas fa-play"></i>
+            </button>
+          </div>
+          <span class="beat-genre-tag boombap">Boom Bap</span>
+        </div>
+        <div class="beat-info">
+          <h3>Jazz Boom Bap live drums</h3>
+          <div class="beat-meta">
+            <span><i class="fas fa-tachometer-alt"></i> 128 BPM</span>
+            <span><i class="fas fa-music"></i> G Major</span>
+            <span><i class="fas fa-clock"></i> 2:30</span>
+          </div>
+          <div class="beat-waveform">
+            <div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div>
+            <div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div>
+            <div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div>
+            <div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div>
+            <div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div>
+            <div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div>
+            <div class="waveform-bar"></div><div class="waveform-bar"></div>
+          </div>
+          <div class="beat-footer">
+            <div class="beat-price">
+              <span class="price-from">ab</span>
+              <span class="price-amount">29€</span>
+            </div>
+            <button class="add-cart-btn" onclick="addToCart('Jazz Boom Bap live drums', 29)">
+              <i class="fas fa-cart-plus"></i> Kaufen
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- BEAT CARD 2 -->
+      <div class="beat-card" data-genre="rnb">
+        <div class="beat-cover">
+          <div class="beat-cover-placeholder">🎵</div>
+          <div class="beat-overlay">
+            <button class="play-btn" onclick="playBeat(this, 'beats/Soul HipHop Beat_87bpm.mp3')">
+              <i class="fas fa-play"></i>
+            </button>
+          </div>
+          <span class="beat-genre-tag rnb">RnB Trap</span>
+        </div>
+        <div class="beat-info">
+          <h3>Soul HipHop Beat</h3>
+          <div class="beat-meta">
+            <span><i class="fas fa-tachometer-alt"></i> 87 BPM</span>
+            <span><i class="fas fa-music"></i> D Minor</span>
+            <span><i class="fas fa-clock"></i> 3:19</span>
+          </div>
+          <div class="beat-waveform">
+            <div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div>
+            <div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div>
+            <div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div>
+            <div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div>
+            <div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div>
+            <div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div>
+            <div class="waveform-bar"></div><div class="waveform-bar"></div>
+          </div>
+          <div class="beat-footer">
+            <div class="beat-price">
+              <span class="price-from">ab</span>
+              <span class="price-amount">29€</span>
+            </div>
+            <button class="add-cart-btn" onclick="addToCart('Soul HipHop Beat', 29)">
+              <i class="fas fa-cart-plus"></i> Kaufen
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- BEAT CARD 3 -->
+      <div class="beat-card" data-genre="trap">
+        <div class="beat-cover">
+          <div class="beat-cover-placeholder">🎵</div>
+          <div class="beat-overlay">
+            <button class="play-btn" onclick="playBeat(this, 'beats/Trap Gosse.mp3')">
+              <i class="fas fa-play"></i>
+            </button>
+          </div>
+          <span class="beat-genre-tag">Trap</span>
+        </div>
+        <div class="beat-info">
+          <h3>Trap Gosse</h3>
+          <div class="beat-meta">
+            <span><i class="fas fa-tachometer-alt"></i> 130 BPM</span>
+            <span><i class="fas fa-music"></i> D# Minor</span>
+            <span><i class="fas fa-clock"></i> 2:57</span>
+          </div>
+          <div class="beat-waveform">
+            <div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div>
+            <div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div>
+            <div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div>
+            <div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div>
+            <div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div>
+            <div class="waveform-bar"></div><div class="waveform-bar"></div><div class="waveform-bar"></div>
+            <div class="waveform-bar"></div><div class="waveform-bar"></div>
+          </div>
+          <div class="beat-footer">
+            <div class="beat-price">
+              <span class="price-from">ab</span>
+              <span class="price-amount">29€</span>
+            </div>
+            <button class="add-cart-btn" onclick="addToCart('Trap Gosse', 29)">
+              <i class="fas fa-cart-plus"></i> Kaufen
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /beats-grid -->
+  </section>
+
+  <!-- ───────────── AUDIO PLAYER (sticky bottom) ───────────── -->
+  <div class="audio-player" id="audioPlayer">
+    <div class="player-info">
+      <div class="player-icon"><i class="fas fa-music"></i></div>
+      <div>
+        <p class="player-title" id="playerTitle">Kein Beat ausgewählt</p>
+        <p class="player-artist">ZizzyBeatz</p>
+      </div>
+    </div>
+    <div class="player-controls">
+      <button onclick="seekBackward()"><i class="fas fa-backward"></i></button>
+      <button class="player-play-btn" id="playerPlayBtn" onclick="togglePlay()">
+        <i class="fas fa-play"></i>
+      </button>
+      <button onclick="seekForward()"><i class="fas fa-forward"></i></button>
+    </div>
+    <div class="player-progress-wrap">
+      <span id="currentTime">0:00</span>
+      <input type="range" id="progressBar" value="0" min="0" max="100" oninput="seek(this.value)"/>
+      <span id="duration">0:00</span>
+    </div>
+    <div class="player-volume">
+      <i class="fas fa-volume-up"></i>
+      <input type="range" id="volumeBar" value="80" min="0" max="100" oninput="setVolume(this.value)"/>
+    </div>
+    <audio id="audioEl"></audio>
+  </div>
+
+  <!-- ───────────── LIZENZEN ───────────── -->
+  <section class="lizenzen-section" id="lizenzen">
+    <div class="section-header">
+      <p class="section-label">📄 Lizenzmodelle</p>
+      <h2>Wähle deine <span>Lizenz</span></h2>
+      <p class="section-sub">Transparente Preise – keine versteckten Kosten</p>
+    </div>
+    <div class="lizenzen-grid">
+
+      <div class="lizenz-card">
+        <div class="lizenz-icon">🎤</div>
+        <h3>Basic</h3>
+        <div class="lizenz-price">29€</div>
+        <ul>
+          <li><i class="fas fa-check"></i> MP3 Download</li>
+          <li><i class="fas fa-check"></i> Bis zu 10.000 Streams</li>
+          <li><i class="fas fa-check"></i> Non-Profit Nutzung</li>
+          <li><i class="fas fa-check"></i> 1 Musikvideo</li>
+          <li><i class="fas fa-times red"></i> Kein WAV</li>
+          <li><i class="fas fa-times red"></i> Kein Trackout</li>
+        </ul>
+        <button class="lizenz-btn" onclick="addToCart('Basic Lizenz', 29)">Jetzt kaufen</button>
+      </div>
+
+      <div class="lizenz-card featured">
+        <div class="badge">Beliebt</div>
+        <div class="lizenz-icon">🚀</div>
+        <h3>Premium</h3>
+        <div class="lizenz-price">59€</div>
+        <ul>
+          <li><i class="fas fa-check"></i> MP3 + WAV Download</li>
+          <li><i class="fas fa-check"></i> Bis zu 100.000 Streams</li>
+          <li><i class="fas fa-check"></i> Kommerzielle Nutzung</li>
+          <li><i class="fas fa-check"></i> 2 Musikvideos</li>
+          <li><i class="fas fa-check"></i> Radio-Nutzung</li>
+          <li><i class="fas fa-times red"></i> Kein Trackout</li>
+        </ul>
+        <button class="lizenz-btn" onclick="addToCart('Premium Lizenz', 59)">Jetzt kaufen</button>
+      </div>
+
+      <div class="lizenz-card">
+        <div class="lizenz-icon">👑</div>
+        <h3>Unlimited</h3>
+        <div class="lizenz-price">99€</div>
+        <ul>
+          <li><i class="fas fa-check"></i> MP3 + WAV + Trackout</li>
+          <li><i class="fas fa-check"></i> Unbegrenzte Streams</li>
+          <li><i class="fas fa-check"></i> Vollständige Nutzungsrechte</li>
+          <li><i class="fas fa-check"></i> Unbegrenzte Videos</li>
+          <li><i class="fas fa-check"></i> Radio + TV Nutzung</li>
+          <li><i class="fas fa-check"></i> Stem Files inklusive</li>
+        </ul>
+        <button class="lizenz-btn" onclick="addToCart('Unlimited Lizenz', 99)">Jetzt kaufen</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ───────────── ABOUT ───────────── -->
+  <section class="about-section" id="about">
+    <div class="about-content">
+      <div class="about-text">
+        <p class="section-label">🎹 Über mich</p>
+        <h2>Wer ist <span>ZizzyBeatz?</span></h2>
+        <p>Ich bin ZizzyBeatz – ein leidenschaftlicher Beatmaker & Produzent mit über <strong>5 Jahren Erfahrung</strong> in der Beatproduktion sowie <strong>3 Jahren Erfahrung</strong> im professionellen Mixing & Mastering.</p>
+        <p>Einer meiner Beats wurde bereits vom bekannten deutschen Rap-Format <strong>RaplaRue</strong> auf YouTube genutzt. Bei mir bekommst du nicht nur fertige Beats – du kannst auch direkt bei mir <strong>Songs aufnehmen</strong>.</p>
+        <p>Mein Fokus liegt auf HipHop in allen Facetten: Trap, Drill-Trap, RnB Trap und Boom Bap – immer mit einem eigenen, unverwechselbaren Sound.</p>
+        <div class="about-tags">
+          <span>🎧 Trap</span>
+          <span>🥁 Drill-Trap</span>
+          <span>💜 RnB Trap</span>
+          <span>🎤 Boom Bap</span>
+          <span>🎙️ Recording</span>
+          <span>🎚️ Mixing & Mastering</span>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="about-card">
+          <i class="fas fa-headphones-alt"></i>
+          <h4>Premium Sound</h4>
+          <p>Alle Beats in professioneller Studioqualität</p>
+        </div>
+        <div class="about-card">
+          <i class="fas fa-sliders-h"></i>
+          <h4>Mixing & Mastering</h4>
+          <p>3+ Jahre Erfahrung – dein Track klingt fertig</p>
+        </div>
+        <div class="about-card">
+          <i class="fas fa-microphone-alt"></i>
+          <h4>Recording möglich</h4>
+          <p>Komm vorbei und nimm deinen Song direkt auf</p>
+        </div>
+        <div class="about-card">
+          <i class="fas fa-trophy"></i>
+          <h4>RaplaRue platziert</h4>
+          <p>Beat bereits beim deutschen Rap-Format RaplaRue</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── KONTAKT ───────────── -->
+  <section class="kontakt-section" id="kontakt">
+    <div class="section-header">
+      <p class="section-label">📬 Kontakt</p>
+      <h2>Schreib mir <span>eine Nachricht</span></h2>
+      <p class="section-sub">Custom Beat Anfragen, Recording, Kooperationen oder Fragen – ich bin für dich da</p>
+    </div>
+    <div class="kontakt-wrapper">
+      <form class="kontakt-form" onsubmit="sendMessage(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Dein Name</label>
+            <input type="text" placeholder="z.B. Lil Artist" required />
+          </div>
+          <div class="form-group">
+            <label>Deine E-Mail</label>
+            <input type="email" placeholder="deine@email.de" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Betreff</label>
+          <input type="text" placeholder="z.B. Custom Beat Anfrage" required />
+        </div>
+        <div class="form-group">
+          <label>Nachricht</label>
+          <textarea rows="5" placeholder="Beschreibe deinen Wunsch-Beat, frag nach Recording oder stelle deine Frage..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary full-width">
+          <i class="fas fa-paper-plane"></i> Nachricht senden
+        </button>
+      </form>
+
+      <div class="kontakt-info">
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/zizzy101/" target="_blank" class="kontakt-item">
+          <i class="fab fa-instagram"></i>
+          <div>
+            <h4>Instagram</h4>
+            <p>@zizzybeatz101</p>
+          </div>
+        </a>
+
+        <!-- E-Mail – Adresse nie im HTML sichtbar, wird via JS geladen -->
+        <div class="kontakt-item" id="emailItem" style="cursor:pointer;" onclick="openEmail()">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <h4>E-Mail</h4>
+            <p>Klick zum Schreiben</p>
+          </div>
+        </div>
+
+        <!-- PayPal -->
+        <div class="kontakt-item">
+          <i class="fab fa-paypal"></i>
+          <div>
+            <h4>Zahlung via PayPal</h4>
+            <p>Sicher & sofort – nach dem Kauf</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────── CART MODAL ───────────── -->
+  <div class="cart-modal" id="cartModal">
+    <div class="cart-modal-content">
+      <div class="cart-header">
+        <h3><i class="fas fa-shopping-cart"></i> Warenkorb</h3>
+        <button onclick="closeCart()"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <p class="cart-empty">Dein Warenkorb ist leer.</p>
+      </div>
+      <div class="cart-total">
+        <span>Gesamt:</span>
+        <span id="cartTotal">0€</span>
+      </div>
+      <button class="btn-primary full-width" onclick="checkout()">
+        <i class="fab fa-paypal"></i> Mit PayPal bezahlen
+      </button>
+    </div>
+  </div>
+  <div class="cart-backdrop" id="cartBackdrop" onclick="closeCart()"></div>
+
+  <!-- ───────────── TOAST ───────────── -->
+  <div class="toast" id="toast"></div>
+
+  <!-- ───────────── FOOTER ───────────── -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="nav-logo">ZIZZY<span>BEATZ</span></div>
+        <p>Premium HipHop Beats – Trap · Drill-Trap · RnB Trap · Boom Bap<br/>Mixing, Mastering & Recording auf Anfrage.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/zizzy101/" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#beats">Beats</a></li>
+          <li><a href="#lizenzen">Lizenzen</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          <li><a href="agb.html">AGB</a></li>
+          <li><a href="agb.html">Lizenzbedingungen</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 ZizzyBeatz. Alle Rechte vorbehalten. &nbsp;|&nbsp;
+        <a href="impressum.html">Impressum</a> &nbsp;|&nbsp;
+        <a href="datenschutz.html">Datenschutz</a> &nbsp;|&nbsp;
+        <a href="agb.html">AGB</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
